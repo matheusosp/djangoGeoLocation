@@ -25,7 +25,7 @@ SECRET_KEY = '_)yw%&r)j5ra72j*)ua%_01&dz8ezq17e@&1su*9mxc3)j#u2r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'djangoGeoLocation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': ['templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Pualo'
 
 USE_I18N = True
 
@@ -119,3 +120,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+YELP_API_KEY = '9awv317osXF2RUk-7ybf4R4fXa3v0GGZxYIdZfgCb05_shZ7IhP2sH16Xq7AHU3CuY2v71VQErGJENIM6RwP2M0oqeMohq3DcABJrwpomu72Wwy97ossrZIuucUJYHYx'
+
+GEOIP_PATH = BASE_DIR / 'geoIp'
+
+LOGOUT_REDIRECT_URL = 'index'
